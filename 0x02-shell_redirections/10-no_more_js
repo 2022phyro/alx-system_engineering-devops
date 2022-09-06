@@ -1,2 +1,2 @@
 #!/bin/bash
-ind . -name '*.js*' -delete
+ind -type f -name '*.js*' -delete
