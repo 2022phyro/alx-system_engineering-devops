@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#prints out all the files in current directory from beyound the '-' sin
+
+for files in *
+do
+	echo "${files#*-}"
+done

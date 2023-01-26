@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#reads from a file and displays id, username, and home directory
+var="passwd"
+temp = $((read -u ))
+echo "$temp"

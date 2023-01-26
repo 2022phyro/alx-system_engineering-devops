@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#Displays time !@ hours and 59 minutes
+#Marks hourly intervals
+x=0
+while [ "$x" -le "12" ]
+do
+	echo "Hour $x"
+	y=1
+	while [ "$y" -lt "60" ]
+	do
+		echo "$y"
+		y=$(($y + 1))
+	done
+	x=$(($x + 1))
+done
