@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 #reads from a file and displays id, username, and home directory
-var="passwd"
-temp = $((read -u ))
-echo "$temp"
+var="/etc/passwd"
+IFS=':'
+while read -r -a line;
+do
+	echo "${line[0]}:${line[2]}:${line[5]}"
+done < $var

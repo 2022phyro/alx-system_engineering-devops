@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+cd tests
+mv apache-access.log  ..
+mv README.md ..
+mv passwd ..
+mv 0-RSA_public_key.pub ..
+cd ..
+rmdir tests
+
