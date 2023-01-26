@@ -9,7 +9,7 @@ do
 	while [ "$y" -lt "60" ]
 	do
 		echo "$y"
-		y=$(($y + 1))
+		y=$((y + 1))
 	done
-	x=$(($x + 1))
+	x=$((x + 1))
 done
