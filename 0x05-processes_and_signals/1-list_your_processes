@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 #Print all currently running processes
-
-ps au
+ps aufx

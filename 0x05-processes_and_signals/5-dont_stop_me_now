@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 # Kills the process of the specified id
-temp=$(ps aux)
-var=$(grep 'bash ./4-to_infinity_and_beyond' <<< "$temp")
-end=$(cut -d ' ' -f3 <<< "$var")
+end=$(pgrep -f 'bash ./4-to_infinity_and_beyond')
 kill -s SIGTERM "$end"

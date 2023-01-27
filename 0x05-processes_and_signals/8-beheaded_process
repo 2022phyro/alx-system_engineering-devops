@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # Kills the process of the specified id
-$(pkill --signal SIGKILL -f 'bash ./7-highlander')
+end="pkill --signal SIGKILL -f 'bash ./7-highlander'"
+eval "$end"
