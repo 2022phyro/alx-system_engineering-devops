@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
+#retuen all non shell files back to the working directory
 cd tests
 mv apache-access.log  ..
 mv README.md ..
-mv passwd ..
 mv 0-RSA_public_key.pub ..
 cd ..
 rmdir tests

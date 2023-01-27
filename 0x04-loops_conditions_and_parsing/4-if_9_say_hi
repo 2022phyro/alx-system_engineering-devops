@@ -4,10 +4,9 @@
 x=1
 while [ "$x" -le "10" ]
 do
-	if [ "$x" -ne "9" ]
+	echo "Best School"
+	if [ "$x" -eq "9" ]
 	then
-		echo "Best School"
-	else
 		echo "Hi"
 	fi
 	x=$((x + 1))

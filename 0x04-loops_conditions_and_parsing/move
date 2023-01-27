@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
+#move all non shell files to a temporary folder prior to shellcheck
 mkdir tests
 mv apache-access.log tests
 mv README.md tests
-mv passwd tests
 mv 0-RSA_public_key.pub tests
