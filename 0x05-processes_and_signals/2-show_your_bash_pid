@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#This shows all lies containing bash
+# shellcheck disable=SC2009
+ps au -C bash

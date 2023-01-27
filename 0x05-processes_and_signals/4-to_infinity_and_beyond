@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Prints To infinity and beyond with a wait time of 2 seconds
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
+
