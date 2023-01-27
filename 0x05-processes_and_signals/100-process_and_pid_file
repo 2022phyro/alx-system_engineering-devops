@@ -2,9 +2,9 @@
 #Prints To infinity and beyond with a wait time of 2 seconds
 touch /test/run/myscript.id
 echo $$ > /test/run/myscript.id
-trap 'echo "I hate the kill command" ;rm "/var/run/myscript.id "; kill "$$"'SIGTERM
-trap "echo 'Y U no love me?' ; rm /var/run/myscript.id kill $$" SIGINT
-trap "rm /var/run/myscript.id ; kill $$" SIGQUIT
+trap 'echo "I hate the kill command"; rm -rf"/var/run/myscript.id "; exit"'SIGTERM
+trap "echo 'Y U no love me?' ;" SIGINT
+trap "rm -rf /var/run/myscript.id ; exit" SIGQUIT
 while true
 do
 	echo "To infinity and beyond"

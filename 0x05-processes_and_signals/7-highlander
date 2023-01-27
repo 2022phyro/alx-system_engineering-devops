@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 #Prints To infinity and beyond with a wait time of 2 seconds
-trap "echo 'I am invincible'" SIGTERM
+trap "echo 'I am invincible!!!'" SIGTERM
 while true
 do
-	trap "echo 'I am invincible'" SIGTERM
 	echo "To infinity and beyond"
-	trap "echo 'I am invincible'" SIGTERM
 	sleep 2
-	trap "echo 'I am invincible'" SIGTERM
 done
