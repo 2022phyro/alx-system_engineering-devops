@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Creates a connection to port 98 and listens
+nc -l 98
