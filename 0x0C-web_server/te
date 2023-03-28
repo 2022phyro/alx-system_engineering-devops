@@ -1,3 +1,8 @@
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
 server {
         listen 80 default_server;
         listen [::]:80 default_server;
@@ -30,6 +35,14 @@ server {
                 # as directory, then fall back to displaying a 404.
                 try_files $uri $uri/ =404;
         }
+        
+tlocation /redirect_me {
+		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	}
+
+	location /redirect_me {
+		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	}
 
         # pass PHP scripts to FastCGI server
         #
@@ -38,7 +51,7 @@ server {
         #
         #       # With php-fpm (or other unix sockets):
         #       fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
-        #       # With php-cgi (or other tcp sockets):
+	#       # With php-cgi (or other tcp sockets):
         #       fastcgi_pass 127.0.0.1:9000;
         #}
 
@@ -65,4 +78,8 @@ server {
 #       root /var/www/example.com;
 #       index index.html;
 #
-                                            
+#       location / {
+#               try_files $uri $uri/ =404;
+#       }
+#}
+
