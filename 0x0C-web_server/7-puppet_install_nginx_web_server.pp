@@ -22,9 +22,9 @@ file {'Error page':
 }
 exec {'redirection':
   command => "sed -i '/# pass PHP scripts to FastCGI server/i \\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n' /etc/nginx/sites-enabled/default",
-  path    => /usr/bin,
+  path    => '/usr/bin/',
 }
 exec {'404_error page':
   command => "sed -i '/\tlocation \/redirect_me {/i \\terror_page 404 /error404.html;\n' /etc/nginx/sites-enabled/default",
-  path    => /usr/bin,
+  path    => '/usr/bin/',
 }
