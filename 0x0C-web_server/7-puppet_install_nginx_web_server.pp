@@ -1,12 +1,12 @@
 package {'nginx':
   ensure   => present,
   name     => nginx,
-  provider => apt-get,
+  provider => apt,
 }
 package {'nginx-extras':
   ensure   => present,
-  name     => nginx,
-  provider => apt-get,
+  name     => nginx-extras,
+  provider => apt,
 }
 file {'welcome page':
   ensure  => present,
