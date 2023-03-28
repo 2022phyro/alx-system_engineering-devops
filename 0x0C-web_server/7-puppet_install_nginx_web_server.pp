@@ -1,30 +1,18 @@
-package {'nginx':
-  ensure   => present,
-  name     => nginx,
-  provider => apt,
+#This manifest configures an nginx server
+exec {'update':
+  command  => 'sudo apt-get -y update; sudo apt-get -y install nginx',
+  provider => shell,
 }
-package {'nginx-extras':
-  ensure   => present,
-  name     => nginx-extras,
-  provider => apt,
-}
-file {'welcome page':
-  ensure  => present,
-  path    => '/var/www/html/index.nginx-debian.html',
-  mode    => '0600',
-  content => 'Hello World!',
-}
-file {'Error page':
-  ensure  => present,
-  path    => '/var/www/html/error404.html',
-  mode    => '0600',
-  content => 'Ceci n\'est pas une page',
+exec {'welcome page':
+  command   => 'echo "Hello World!" > /var/www/html/index.nginx-debian.html',
+  provider => shell,
 }
 exec {'redirection':
-  command => "sed -i '/# pass PHP scripts to FastCGI server/i \\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n' /etc/nginx/sites-enabled/default",
-  path    => '/usr/bin/',
+  command => 'sudo sed -i "s/server_name _;/server_name;\n\tlocation \/redirect_me {\n\t\treturn 301 https:\/\/www.youtube.com;\n\t}/g" /etc/nginx/sites-enabled/default',
+  provider => shell,
 }
-exec {'404_error page':
-  command => "sed -i '/\tlocation \/redirect_me {/i \\terror_page 404 /error404.html;\n' /etc/nginx/sites-enabled/default",
-  path    => '/usr/bin/',
+exec {'restart':
+  command  => 'sudo service nginx restart',
+  provider => shell,
 }
+
