@@ -8,7 +8,6 @@ exec {'update':
 package{'nginx':
   provider => apt,
   name     => 'nginx',
-  before   => Exec['install myserver'],
 }
 exec {'custom header':
   provider => shell,
