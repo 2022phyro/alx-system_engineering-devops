@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#This configures an ubuntu server to install and config nginx
 sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo apt-get -y install nginx-extras
