@@ -27,6 +27,5 @@ ssl_protocols TLSv1 TLSv1.1 TLSv1.2 TLSv1.3; # Dropping SSLv3, ref: POODLE
 
         include /etc/nginx/conf.d/*.conf;
         include /etc/nginx/sites-enabled/*;
-	add_header X-Served-By ed61f823a94a;
 }
 

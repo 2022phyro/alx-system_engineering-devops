@@ -11,7 +11,7 @@ package{'nginx':
 }
 exec {'custom header':
   provider => shell,
-  command  => 'sudo sed -i "/include \/etc\/nginx\/sites-enabled\/\*;/a \\\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf',
+  command  => 'sudo sed -i "s/include \/etc\/nginx\/sites-enabled\/\*;/include \/etc\/nginx\/sites-enabled\/\*;\n\tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf',
   before   => Exec['restart'],
 }
 exec {'restart':
