@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # This prints out all the subdomains of a domain
 print_out ()
 {
