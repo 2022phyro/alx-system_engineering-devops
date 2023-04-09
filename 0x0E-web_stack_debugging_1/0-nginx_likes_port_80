@@ -5,4 +5,5 @@ sudo apt-get -y install nginx
 sudo sed -i -e 's/listen 8080/listen 80/'  /etc/nginx/sites-enabled/default
 sudo sed -i 's/listen \[\:\:\]\:8080/listen \[\:\:\]\:80/' /etc/nginx/sites-enabled/default
 sudo sed -i 's/ ipv6only=one//' /etc/nginx/sites-available/default
+pkill nginx
 sudo service nginx restart
