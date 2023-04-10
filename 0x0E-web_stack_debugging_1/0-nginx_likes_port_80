@@ -1,9 +1,5 @@
 #!/usr/bin/env bash100-redirect_http_to_https
 # This debugs this container and allow it listen at 80
-sudo apt -y update
-sudo apt-get -y install nginx
-sudo sed -i -e 's/listen 8080/listen 80/'  /etc/nginx/sites-available/default
-sudo sed -i 's/listen \[\:\:\]\:8080/listen \[\:\:\]\:80/' /etc/nginx/sites-available/default
 rm /etc/nginx/sites-enabled/default
 ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo sed -i 's/ ipv6only=one//' /etc/nginx/sites-available/default
