@@ -18,7 +18,7 @@ if __name__ == '__main__':
         if val.get('completed'):
             completed += 1
         i += 1
-    print("tasks({}/{})".format(completed, i))
+    print("tasks({}/{}):".format(completed, i))
     for val in todo:
         if val.get('completed'):
             print("\t {}".format(val.get('title')))
