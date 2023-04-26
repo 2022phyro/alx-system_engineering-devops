@@ -13,9 +13,9 @@ if __name__ == '__main__':
     name = requests.get("{}users/{}".format(url, sys.argv[1])).json()
     u_name = name.get('username')
     todo = requests.get("{}todos?userId={}".format(url, sys.argv[1])).json()
-    end_dict = {}
     list_ = []
     for val in todo:
+        end_dict = {}
         end_dict.update({"task": val.get('title')})
         end_dict.update({"completed": val.get('completed')})
         end_dict.update({"username": u_name})
