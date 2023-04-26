@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-"""This uses the provided api to print stuff"""
+
+"""This uses the provided api to print stuff
+Here we use json api to print out a specific employee"""
+
+
 import requests
 import sys
 url = "https://jsonplaceholder.typicode.com/"
