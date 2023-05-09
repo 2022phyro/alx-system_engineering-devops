@@ -1,32 +1,33 @@
 #!/usr/bin/python3
-"""This file atempts no 0"""
+"""This file attempts to recursively
+get all hot posts from the reddit api"""
 import requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
     """Recursively get all posts"""
-    url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=100'
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
 
     headers = {
-            'User-Agent': 'my_bot/1.0 by my_username',
+            'User-Agent': 'my_bot/1.0',
             }
+    params = {'limit': '100'}
     if after:
-        params = {'after': after}
-    else:
-        params={}
+        params['after'] = after
 
-    response = requests.get(url, headers=headers, params=params, allow_redirects=False)
+    response = requests.get(
+            url,
+            headers=headers, params=params, allow_redirects=False
+            )
     if response.status_code != 200:
-        return hot_list
-    print(response.status_code)
-    for k in response.json().keys:
-        print(k)
-    """
+        return None
+
     domain = response.json().get('data').get('children')
     if not domain:
         return hot_list
-    hot_list += [x.get('data').get('title') for x in domain]
-    print(len(set(hot_list)))
-    x = domain[-1]['data']['id']
-    return hot_list
-#    return recurse(subreddit, hot_list, after=x)"""
+    if hot_list:
+        hot_list += [x.get('data').get('title') for x in domain]
+    else:
+        hot_list = [x.get('data').get('title') for x in domain]
+    x = domain[-1]['kind'] + '_' + domain[-1]['data']['id']
+    return recurse(subreddit, hot_list, after=x)
