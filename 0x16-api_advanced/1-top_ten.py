@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-"""This file atempts no 0"""
+"""This file gets the top ten hot posts
+of a subreddit"""
 import requests
 
 
 def top_ten(subreddit):
     """Gets the top ten spots"""
-    url = f'https://www.reddit.com/r/{subreddit}/hot.json'
+    url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
 
-    headers = {'User-Agent': 'my_bot/1.0 by my_username'}
+    headers = {'User-Agent': 'my_bot/1.0'}
 
     response = requests.get(url, headers=headers, allow_redirects=False)
 
