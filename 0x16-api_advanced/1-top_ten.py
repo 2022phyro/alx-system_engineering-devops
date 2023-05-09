@@ -14,9 +14,11 @@ def top_ten(subreddit):
 
     if response.status_code != 200:
         print("None")
+        return
     domain = response.json().get('data').get('children')
     if domain:
         for i in range(10):
             print(domain[i].get('data').get('title'))
     else:
         print("None")
+        return
