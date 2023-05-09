@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-"""This file atempts no 0"""
+"""This file queries the reddit api for a
+given subreddit and returns the number of
+subscribers"""
 import requests
+import sys
 
 
 def number_of_subscribers(subreddit):
