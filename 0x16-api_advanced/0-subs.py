@@ -3,12 +3,11 @@
 given subreddit and returns the number of
 subscribers"""
 import requests
-import sys
 
 
 def number_of_subscribers(subreddit):
     """Gets the number of subscribers"""
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
 
     headers = {'User-Agent': 'Mozilla/5.0'}
 
