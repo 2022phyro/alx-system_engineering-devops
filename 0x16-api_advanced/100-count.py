@@ -14,7 +14,7 @@ def match(string, text):
 
 def _print(curr):
     """Prints out the dictionary"""
-    for k, v in sorted(curr.items(), key=lambda x: x[1], reverse=True):
+    for k, v in sorted(curr.items(), key=lambda x: (-x[1], x[0])):
         if v != 0:
             print("{}: {}".format(k, v))
 
