@@ -5,7 +5,7 @@
 import sys
 
 if __name__ == '__main__':
-    recurse = __import__('2-recurse').recurse
+    recurse = __import__('100-count').count_words
     if len(sys.argv) < 2:
         print("Please pass an argument for the subreddit to search.")
     else:
