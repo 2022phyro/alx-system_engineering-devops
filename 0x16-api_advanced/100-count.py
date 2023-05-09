@@ -35,7 +35,7 @@ def count_words(subreddit, word_list=[], hot_dict={}, after=None):
             headers=headers, params=params, allow_redirects=False
             )
     if not hot_dict:
-        #word_list = set([x.lower() for x in word_list])
+        word_list = set([x.lower() for x in word_list])
         hot_dict = {x: 0 for x in word_list}
     if response.status_code != 200:
         _print(hot_dict)
