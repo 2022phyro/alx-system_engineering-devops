@@ -3,12 +3,13 @@ server {
     server_name 100.25.17.233;
 
     location /airbnb-onepage/ {
-         proxy_pass http://localhost:5000;
+        include proxy_params;
+        proxy_pass http://localhost:5000;
     }
 
-    location ~  ^/airbnb-dynamic/number_odd_or_even/(\d+)$ {
-        rewrite ^/airbnb-dynamic/number_odd_or_even/(\d+)$ /number_odd_or_even/$1 break;
-        proxy_pass http://localhost:5001;
+    location /airbnb-dynamic/number_odd_or_even/ {
+        include proxy_params;
+        proxy_pass http://localhost:5001/number_odd_or_even/;
     }
 }
 
