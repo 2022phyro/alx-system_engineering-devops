@@ -3,7 +3,9 @@ server {
     server_name 100.25.17.233;
 
     location /airbnb-onepage/ {
-        include proxy_params
-        proxy_pass http://localhost:5000;
+        include proxy_params;
+        proxy_pass http://localhost:5000/airbnb-onepage/;
     }
+
 }
+
