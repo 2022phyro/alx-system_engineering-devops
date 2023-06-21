@@ -1,1 +1,3 @@
-Hello
+# WEB STACK DEBUGGING 1
+
+In the first debugging task we were given a server that would not return a page when requested to do so. This time its' returning on something else. It's not returning anythin on ``port 80`` instead it's receiving on ``port 8080``. Our job is to correct this anomaly. At first when i investigated through i saw a zombie process was still running that was listening on port 80. I resolved it with the first file [0-nginx_likes_port_80](./0-nginx_likes_port_80). In the second question, it was much trickier as the ``nginx daemon`` still had to be down and given a response on port 80. I resolved it in the second file [1-debugging_made_short](./1-debugging_made_short).
